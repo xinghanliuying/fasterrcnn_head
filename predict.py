@@ -101,10 +101,10 @@ def main(predict_data):
                      category_index,
                      thresh=0.2,
                      line_thickness=1)
-        plt.imshow(original_img)
-        plt.show()
-        # 保存预测的图片结果
-        original_img.save("/kaggle/working/test_result.jpg")
+            plt.imshow(original_img)
+            plt.show()
+            # 保存预测的图片结果
+            original_img.save("/kaggle/working/test_result.jpg")
 
 
 if __name__ == '__main__':
