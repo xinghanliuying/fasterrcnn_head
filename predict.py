@@ -93,18 +93,20 @@ def main(predict_data):
 
         if len(predict_boxes) == 0:
             print("没有检测到任何目标!")
-        if predict_scores > 0.9:
-            draw_box(original_img,
-                     predict_boxes,
-                     predict_classes,
-                     predict_scores,
-                     category_index,
-                     thresh=0.2,
-                     line_thickness=1)
-            plt.imshow(original_img)
-            plt.show()
-            # 保存预测的图片结果
-            original_img.save("/kaggle/working/test_result.jpg")
+        # if predict_scores > 0.9:
+        draw_box(original_img,
+                 predict_boxes,
+                 predict_classes,
+                 predict_scores,
+                 category_index,
+                 thresh=0.2,
+                 line_thickness=1)
+        plt.imshow(original_img)
+        plt.show()
+        # 保存预测的图片结果
+        print(predict_scores)
+        original_img.save("/kaggle/working/test_result.jpg")
+
 
 
 if __name__ == '__main__':
