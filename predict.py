@@ -93,7 +93,7 @@ def main(predict_data):
 
         if len(predict_boxes) == 0:
             print("没有检测到任何目标!")
-        if predict_scores > 90:
+        if predict_scores > 0.9:
             draw_box(original_img,
                      predict_boxes,
                      predict_classes,
