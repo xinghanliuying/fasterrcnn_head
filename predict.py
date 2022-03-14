@@ -99,8 +99,8 @@ def main(predict_data):
                  predict_classes,
                  predict_scores,
                  category_index,
-                 thresh=0.5,
-                 line_thickness=3)
+                 thresh=0.2,
+                 line_thickness=1)
         plt.imshow(original_img)
         plt.show()
         # 保存预测的图片结果
@@ -114,7 +114,6 @@ if __name__ == '__main__':
         description=__doc__)
 
     parser.add_argument('--model-path', default='./', help='model.path')
-    # 检测目标类别数(不包含背景)
     parser.add_argument('--image_path', default='./', help='image.path')
 
     args = parser.parse_args()
