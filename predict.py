@@ -117,7 +117,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--model_path', default='./', help='model.path')
     parser.add_argument('--image_path', default='./', help='image.path')
-    parser.add_argument('--show_thresh', default=0.5, help='image.path', type=numpy.ndarray)
+    parser.add_argument('--show_thresh', default=0.5, help='image.path', type=float)
 
     args = parser.parse_args()
     print(args)
