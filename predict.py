@@ -99,7 +99,7 @@ def main(predict_data):
                  predict_classes,
                  predict_scores,
                  category_index,
-                 thresh=predict_data.thresh,
+                 thresh=predict_data.show_thresh,
                  line_thickness=1)
         plt.imshow(original_img)
         plt.show()
@@ -115,7 +115,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description=__doc__)
 
-    parser.add_argument('--model-path', default='./', help='model.path')
+    parser.add_argument('--model_path', default='./', help='model.path')
     parser.add_argument('--image_path', default='./', help='image.path')
     parser.add_argument('--show_thresh', default=0.5, help='image.path')
 
