@@ -105,14 +105,14 @@ def main(parser_data):
 
     # define optimizer
     params = [p for p in model.parameters() if p.requires_grad]
-    optimizer = torch.optim.SGD(params, lr=0.00005,#0.005
+    optimizer = torch.optim.SGD(params, lr=0.05,#0.005
                                 momentum=0.9, weight_decay=0.0005)
 
     scaler = torch.cuda.amp.GradScaler() if args.amp else None
 
     # learning rate scheduler
     lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer,
-                                                   step_size=5,#3
+                                                   step_size=3,#3
                                                    gamma=0.33)
 
     # 如果指定了上次训练保存的权重文件地址，则接着上次结果接着训练
