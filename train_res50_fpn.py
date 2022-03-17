@@ -135,10 +135,6 @@ def main(parser_data):
     train_loss = []
     learning_rate = []
     val_map = []
-    wandb.log({
-        "train_loss": train_loss,
-        "val_map": val_map
-    })
     wandb.watch(model, log="all")
     for epoch in range(parser_data.start_epoch, parser_data.epochs):
         # train for one epoch, printing every 10 iterations
@@ -174,6 +170,10 @@ def main(parser_data):
             save_files["scaler"] = scaler.state_dict()
         if epoch > (parser_data.epochs - 20):
             torch.save(save_files, "/kaggle/working/resNetFpn-model-{}.pth".format(epoch))
+        wandb.log({
+            "train_loss": train_loss,
+            "val_map": val_map
+        })
     torch.save(model.state_dict(), 'model.h5')
     wandb.save('model.h5')
     # plot loss and lr curve
