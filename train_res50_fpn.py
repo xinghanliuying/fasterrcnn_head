@@ -9,7 +9,9 @@ from backbone import resnet50_fpn_backbone
 from my_dataset import VOCDataSet
 from train_utils import GroupedBatchSampler, create_aspect_ratio_groups
 from train_utils import train_eval_utils as utils
+import wandb
 
+wandb.init(project="fasterrcnn-project", entity="xinghanliuying")
 
 def create_model(num_classes):
     # 注意，这里的backbone默认使用的是FrozenBatchNorm2d，即不会去更新bn参数
