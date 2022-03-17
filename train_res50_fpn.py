@@ -174,7 +174,8 @@ def main(parser_data):
             save_files["scaler"] = scaler.state_dict()
         if epoch > (parser_data.epochs - 20):
             torch.save(save_files, "/kaggle/working/resNetFpn-model-{}.pth".format(epoch))
-
+    torch.save(model.state_dict(), 'model.h5')
+    wandb.save('model.h5')
     # plot loss and lr curve
     if len(train_loss) != 0 and len(learning_rate) != 0:
         from plot_curve import plot_loss_and_lr
