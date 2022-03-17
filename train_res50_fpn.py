@@ -12,7 +12,11 @@ from train_utils import train_eval_utils as utils
 import wandb
 
 wandb.init(project="fasterrcnn-project", entity="xinghanliuying")
-
+wandb.config = {
+  "learning_rate": 0.05,
+  "epochs": 100,
+  "batch_size": 8
+}
 def create_model(num_classes):
     # 注意，这里的backbone默认使用的是FrozenBatchNorm2d，即不会去更新bn参数
     # 目的是为了防止batch_size太小导致效果更差(如果显存很小，建议使用默认的FrozenBatchNorm2d)
@@ -166,7 +170,7 @@ def main(parser_data):
             save_files["scaler"] = scaler.state_dict()
         if epoch > (parser_data.epochs - 20):
             torch.save(save_files, "/kaggle/working/resNetFpn-model-{}.pth".format(epoch))
-
+        wandb.watch(model)
     # plot loss and lr curve
     if len(train_loss) != 0 and len(learning_rate) != 0:
         from plot_curve import plot_loss_and_lr
