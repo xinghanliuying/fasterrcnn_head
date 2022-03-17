@@ -136,7 +136,6 @@ def main(parser_data):
     learning_rate = []
     val_map = []
     wandb.log({
-        "Examples": example_images,
         "train_loss": train_loss,
         "val_map": val_map
     })
