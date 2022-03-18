@@ -187,9 +187,8 @@ def main(parser_data):
             "coco_info": coco_info_wb,
             "lr": lr,
             "mean": mean_loss.item(),
-            "mean_test": float(mean_loss.item()),
-            "map_test1": coco_info[1],
-            "map_test2": round(coco_info[1], 2)
+            "metrics/mAP_0.5": coco_info[1],
+            "metrics/mAP_0.5:0.95": coco_info[0],
         })
         print(coco_info)
         print(coco_info[1])

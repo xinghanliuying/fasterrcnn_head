@@ -96,7 +96,7 @@
       <workItem from="1647310898700" duration="3701000" />
       <workItem from="1647327179312" duration="2646000" />
       <workItem from="1647497731573" duration="5971000" />
-      <workItem from="1647567127400" duration="13126000" />
+      <workItem from="1647567127400" duration="19662000" />
     </task>
     <servers />
   </component>
@@ -112,6 +112,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="487" y="24" key="#turn/0.0.1536.824@0.0.1536.824" timestamp="1646015154379" />
+    <state x="643" y="166" key="FileChooserDialogImpl" timestamp="1647592002512">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="643" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1647592002512" />
     <state width="1491" height="210" key="GridCell.Tab.0.bottom" timestamp="1647226213497">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -132,6 +136,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="269" y="53" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1647245250798" />
+    <state x="547" y="11" width="632" height="801" key="find.popup" timestamp="1647592503633">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="547" y="11" width="632" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1647592503633" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1647226186178">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
