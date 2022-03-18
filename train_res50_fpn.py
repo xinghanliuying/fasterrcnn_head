@@ -188,6 +188,7 @@ def main(parser_data):
         print(float(coco_info[1]))
         print(float(coco_info[2]))
         print(lr)
+        print(lr.type())
         print(mean_loss.type())
         print(float(coco_info[1]).type())
         print(float(coco_info[2]).type())
