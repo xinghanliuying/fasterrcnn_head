@@ -182,9 +182,9 @@ def main(parser_data):
         val_map_wb = round(float(coco_info[1]), 3)
         coco_info_wb = float(coco_info[2])
         wandb.log({
-            "train_loss": mean_loss_wb,
-            "val_map": val_map_wb,
-            "coco_info": coco_info_wb,
+            # "train_loss": mean_loss_wb,
+            # "val_map": val_map_wb,
+            # "coco_info": coco_info_wb,
             "lr": lr,
             "mean": mean_loss.item(),
             "metrics/mAP_0.5": coco_info[1],
