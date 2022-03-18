@@ -181,9 +181,18 @@ def main(parser_data):
         wandb.log({
             "train_loss": mean_loss,
             "val_map": float(coco_info[1]),
-            "coco_info":float(coco_info[2]),
+            "coco_info": float(coco_info[2]),
             "lr": lr
         })
+        print(mean_loss)
+        print(float(coco_info[1]))
+        print(float(coco_info[2]))
+        print(lr)
+        print(mean_loss.type())
+        print(float(coco_info[1]).type())
+        print(float(coco_info[2]).type())
+        print(lr)
+
     # torch.save(model.state_dict(), 'model.h5')
     # wandb.save('model.h5')
     # plot loss and lr curve
