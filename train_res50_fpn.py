@@ -178,21 +178,24 @@ def main(parser_data):
             save_files["scaler"] = scaler.state_dict()
         if epoch > (parser_data.epochs - 20):
             torch.save(save_files, "/kaggle/working/resNetFpn-model-{}.pth".format(epoch))
+        mean_loss_wb = float(mean_loss)
+        val_map_wb = float(coco_info[1])
+        coco_info_wb = float(coco_info[2])
         wandb.log({
-            "train_loss": mean_loss,
-            "val_map": float(coco_info[1]),
-            "coco_info": float(coco_info[2]),
+            "train_loss": mean_loss_wb,
+            "val_map": val_map_wb,
+            "coco_info": coco_info_wb,
             "lr": lr
         })
-        print(mean_loss)
-        print(float(coco_info[1]))
-        print(float(coco_info[2]))
-        print(lr)
-        print(lr.type())
-        print(mean_loss.type())
-        print(float(coco_info[1]).type())
-        print(float(coco_info[2]).type())
-        print(lr)
+        # print(mean_loss)
+        # print(float(coco_info[1]))
+        # print(float(coco_info[2]))
+        # print(lr)
+        # print(lr.type())
+        # print(mean_loss.type())
+        # print(float(coco_info[1]).type())
+        # print(float(coco_info[2]).type())
+        # print(lr)
 
     # torch.save(model.state_dict(), 'model.h5')
     # wandb.save('model.h5')
