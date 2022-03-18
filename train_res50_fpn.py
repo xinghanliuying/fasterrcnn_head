@@ -189,6 +189,9 @@ def main(parser_data):
             "mean": mean_loss.item(),
             "mean_test": float(mean_loss.item()),
         })
+        print(coco_info)
+        print(coco_info[1])
+        print(coco_info[2])
         # print(mean_loss)
         # print(float(coco_info[1]))
         # print(float(coco_info[2]))
