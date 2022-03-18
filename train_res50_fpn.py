@@ -189,14 +189,14 @@ def main(parser_data):
             "mean": mean_loss.item(),
             "mean_test": float(mean_loss.item()),
             "map_test1": coco_info[1],
-            "map_test2": coco_info[1].item()
+            "map_test2": round(coco_info[1], 2)
         })
         print(coco_info)
         print(coco_info[1])
         print(coco_info[2])
         print(mean_loss_wb)
         print(val_map_wb)
-        print(coco_info[1].item())
+        # print(coco_info[1].item())
         # print(mean_loss)
         # print(float(coco_info[1]))
         # print(float(coco_info[2]))
