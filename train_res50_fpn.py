@@ -180,7 +180,9 @@ def main(parser_data):
         wandb.log({
             "train_loss": train_loss,
             "val_map": val_map,
-            "coco_info": coco_info
+            "coco_info": coco_info,
+            "epoch": epoch,
+            "lr": lr
         })
     # torch.save(model.state_dict(), 'model.h5')
     # wandb.save('model.h5')
