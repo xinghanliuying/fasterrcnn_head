@@ -18,10 +18,10 @@ wandb.init(project="fasterrcnn-project", entity="xinghanliuying")
 #   "batch_size": 8
 # }
 config = wandb.config          # Initialize config
-config.batch_size = 4          # input batch size for training (default: 64)
-config.epochs = 50             # number of epochs to train (default: 10)
-config.lr = 0.1               # learning rate (default: 0.01)
-config.momentum = 0.1          # SGD momentum (default: 0.5)
+config.parser_data.batch_size = 4          # input batch size for training (default: 64)
+config.parser_data.epochs = 50             # number of epochs to train (default: 10)
+config.params.lr = 0.1               # learning rate (default: 0.01)
+config.params.momentum = 0.1          # SGD momentum (default: 0.5)
 
 
 def create_model(num_classes):
