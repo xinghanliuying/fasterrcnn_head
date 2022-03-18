@@ -17,11 +17,7 @@ wandb.init(project="fasterrcnn-project", entity="xinghanliuying")
 #   "epochs": 100,
 #   "batch_size": 8
 # }
-config = wandb.config          # Initialize config
-config.parser_data.batch_size = 4          # input batch size for training (default: 64)
-config.parser_data.epochs = 50             # number of epochs to train (default: 10)
-config.params.lr = 0.1               # learning rate (default: 0.01)
-config.params.momentum = 0.1          # SGD momentum (default: 0.5)
+
 
 
 def create_model(num_classes):
@@ -50,6 +46,11 @@ def create_model(num_classes):
 
 
 def main(parser_data):
+    config = wandb.config  # Initialize config
+    config.parser_data.batch_size = 4  # input batch size for training (default: 64)
+    config.parser_data.epochs = 50  # number of epochs to train (default: 10)
+    config.params.lr = 0.1  # learning rate (default: 0.01)
+    config.params.momentum = 0.1  # SGD momentum (default: 0.5)
     device = torch.device(parser_data.device if torch.cuda.is_available() else "cpu")
     print("Using {} device training.".format(device.type))
 
