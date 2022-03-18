@@ -179,10 +179,9 @@ def main(parser_data):
         if epoch > (parser_data.epochs - 20):
             torch.save(save_files, "/kaggle/working/resNetFpn-model-{}.pth".format(epoch))
         wandb.log({
-            "train_loss": train_loss,
-            "val_map": val_map,
-            "coco_info": coco_info,
-            "epoch": epoch,
+            "train_loss": mean_loss.item(),
+            "val_map": coco_info[1],
+            "coco_info": coco_info[2],
             "lr": lr
         })
     # torch.save(model.state_dict(), 'model.h5')
