@@ -119,7 +119,7 @@ def main(parser_data):
 
     # define optimizer
     params = [p for p in model.parameters() if p.requires_grad]
-    optimizer = torch.optim.SGD(params, lr=0.05,#0.005
+    optimizer = torch.optim.SGD(params, lr=0.005,#0.005
                                 momentum=0.9, weight_decay=0.0005)
 
     scaler = torch.cuda.amp.GradScaler() if args.amp else None
@@ -180,21 +180,17 @@ def main(parser_data):
             torch.save(save_files, "/kaggle/working/resNetFpn-model-{}.pth".format(epoch))
         mean_loss_wb = round(float(mean_loss), 3)
         val_map_wb = round(float(coco_info[1]), 3)
-        coco_info_wb = float(coco_info[2])
         wandb.log({
-            # "train_loss": mean_loss_wb,
-            # "val_map": val_map_wb,
-            # "coco_info": coco_info_wb,
             "lr": lr,
-            "mean": mean_loss.item(),
+            "train_loss": mean_loss.item(),
             "metrics/mAP_0.5": coco_info[1],
             "metrics/mAP_0.5:0.95": coco_info[0],
         })
-        print(coco_info)
-        print(coco_info[1])
-        print(coco_info[2])
-        print(mean_loss_wb)
-        print(val_map_wb)
+        # print(coco_info)
+        # print(coco_info[1])
+        # print(coco_info[2])
+        # print(mean_loss_wb)
+        # print(val_map_wb)
         # print(coco_info[1].item())
         # print(mean_loss)
         # print(float(coco_info[1]))

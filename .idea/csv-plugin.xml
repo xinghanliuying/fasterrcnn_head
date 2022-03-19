@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\network_files\rpn_function.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\predict.py">
           <value>
             <Attribute>
